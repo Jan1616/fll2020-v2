@@ -14,10 +14,8 @@ brick.buttonDown.onEvent(ButtonEvent.Pressed, function () {
 // MISIJA 1(ORANŽNA ŽIRAFA)
 brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.setInverted(true)
-    pospesevanje(30)
-    motors.largeBC.tank(30, 30, 0.5, MoveUnit.Rotations)
-    do_crte(80, 30, 2)
-    //motors.largeBC.tank(30, 30, 0.3, MoveUnit.Rotations)
+    pospesevanje(20)
+    motors.largeBC.steer(0, 20, 2.3, MoveUnit.Rotations)
     motors.stopAll()
 })
 
@@ -137,5 +135,9 @@ let senzor = 0
 let i = 0
 let svetlost = 0
 let maxmoc = 0
+sensors.color1.reflectedLight()
+sensors.color2.reflectedLight()
+sensors.gyro3.angle()
+brick.setStatusLight(StatusLight.Orange)
 
 //Čudovito!!
