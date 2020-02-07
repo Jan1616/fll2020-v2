@@ -1,0 +1,6 @@
+makecode:
+  target: ev3
+  platform: linux
+  home_url: https://makecode.mindstorms.com/
+theme: jekyll-theme-slate
+include: assets

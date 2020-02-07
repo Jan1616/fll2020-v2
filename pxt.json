@@ -1,0 +1,19 @@
+{
+    "name": "fll2020 v2",
+    "description": "",
+    "dependencies": {
+        "ev3": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "ev3"
+    ],
+    "preferredEditor": "tsprj"
+}
