@@ -15,10 +15,13 @@ brick.buttonDown.onEvent(ButtonEvent.Pressed, function () {
 brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.setInverted(true)
     pospesevanje(20)
-    motors.largeBC.steer(0, 20, 2.54, MoveUnit.Rotations)
-    //for (let i = 0; i < 4; i++) {
-
-    //}
+    motors.largeBC.steer(0, 20, 2.5, MoveUnit.Rotations)
+    control.waitMicros(1000000)
+    motors.largeBC.tank(30, 30, -0.1, MoveUnit.Rotations)
+    for (let i = 0; i < 8; i++) {
+        motors.mediumA.run(30, 0.3, MoveUnit.Rotations)
+        motors.mediumA.run(30, -0.3, MoveUnit.Rotations)
+    }
     motors.stopAll()
 })
 
