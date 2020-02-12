@@ -17,8 +17,10 @@ brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     pospesevanje(20)
     motors.largeBC.tank(30, 30, 1, MoveUnit.Rotations)
     do_crte(90, 20, 2)
-    motors.largeBC.tank(10, 10, 0.4, MoveUnit.Rotations)
-    //motors.largeBC.tank(30, 30, -0.1, MoveUnit.Rotations)
+    motors.largeBC.tank(10, 10, 0.35, MoveUnit.Rotations)
+    control.waitMicros(100000)
+    motors.largeBC.tank(30, 30, -0.1, MoveUnit.Rotations)
+    motors.mediumD.run(30, 0.3, MoveUnit.Rotations)
     motors.stopAll()
 })
 
@@ -29,11 +31,11 @@ brick.buttonLeft.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.tank(30, 30, -3.7, MoveUnit.Rotations)
     motors.mediumA.run(100, 0.8, MoveUnit.Seconds)
     motors.largeB.run(30, 0.25, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 30, -0.9, MoveUnit.Rotations)
+    motors.largeBC.tank(30, 30, -0.8, MoveUnit.Rotations)
     motors.largeBC.tank(30, 1, MoveUnit.Rotations)
     do_crte(90, 30, 1)
     control.waitMicros(200000)
-    motors.largeB.run(30, -0.9, MoveUnit.Rotations)
+    motors.largeB.run(30, -0.8, MoveUnit.Rotations)
     motors.largeBC.tank(30, 30, 2.4, MoveUnit.Rotations)
 })
 
@@ -53,16 +55,20 @@ brick.buttonEnter.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.tank(30, 30, 1, MoveUnit.Rotations)
 })
 
+
 sensors.color1.calibrateLight(LightIntensityMode.Reflected)
+
 
 // KALIBRIRA GYRO
 brick.buttonRight.onEvent(ButtonEvent.Pressed, function () {
     sensors.gyro3.calibrate()
 })
 
+
 /*
 OD TU NAPREJ PODPROGRAMI 
 */
+
 /*
 PODPROGRAM ZA VOŽNJO NARAVNOST
 */
@@ -81,6 +87,8 @@ function vozi_ravno(cm: number) {
 
     }
 }
+
+
 /*
 PODPROGRAM ZA POSPEŠEVANJE
 */
@@ -93,6 +101,8 @@ function pospesevanje(maxmoc: number) {
         control.waitMicros(100000)
     }
 }
+
+
 /*
 PODPROGRAM ZA VOŽNJO DO ČRTE
 */
@@ -114,6 +124,8 @@ function do_crte(svetlost: number, moc: number, senzor: number) {
         motors.stopAll()
     }
 }
+
+
 /*
 PODPROGRAM ZA IZPIS POMEMBNIH VREDNOSTI SENZORJEV
 */

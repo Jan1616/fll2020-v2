@@ -1,5 +1,5 @@
 {
-    "name": "fll2020 v3 test",
+    "name": "fll2020 v3",
     "description": "",
     "dependencies": {
         "ev3": "*"
